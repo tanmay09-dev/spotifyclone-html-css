@@ -4,7 +4,7 @@ body {
   padding: 0;
   background-color: black;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .main {
     display: flex;
@@ -13,7 +13,8 @@ body {
 }
 .sidebar {
     background-color: black;
-    width: 340px;
+    width: 100%;
+  max-width: 320px;
     border-radius: 1rem;
     margin-right: 0.5rem;
 }
@@ -149,19 +150,18 @@ a {
 }
 .card {
     background-color: #232323;
-    width: 150px;
+    width: 45%;
+  max-width: 180px;
     border-radius: 0.5rem;
     padding: 1rem;
     margin:1.5rem 0 0 1.5rem;
 
 }
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-}
+.cards-container,
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .card-img {
     width: 100%;
@@ -284,5 +284,44 @@ a {
     opacity: 1;
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .music-player {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem;
+  }
+
+  .album, .player, .control {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .sticky-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 
 
